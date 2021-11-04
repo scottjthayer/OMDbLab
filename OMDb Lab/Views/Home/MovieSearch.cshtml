@@ -1,0 +1,22 @@
+﻿@model MovieModel
+@{
+}
+
+<form method="post" asp-action="MovieSearch">
+    <label for="Title">Please enter a movie title to search movie database</label>
+    <input type="text" name="Title" />
+    <input type="submit" />
+</form>
+
+
+@if (Model != null)
+{
+    <div>
+        <h3>
+            @Model.Title Year released: @Model.Year<br />
+            @Model.Plot
+        </h3>
+        <h4>Runtime: @Model.Runtime</h4>
+        <img src="@Model.Poster" />
+    </div>
+}
